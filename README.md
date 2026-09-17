@@ -41,7 +41,11 @@ All datasets in the examples are hypothetical and designed for learning.
 
 ## Want to experiment with the numbers?
 
-The included interactive app lets you change probabilities and immediately see how the results respond. Running it requires [R](https://cran.r-project.org/) and the `shiny` package:
+The interactive app lets you change probabilities and immediately see how the results respond:
+
+### **[Open the web-based Shiny app →](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6)**
+
+It runs directly in your browser, so there is nothing to install. The options below are only for anyone who would like to run their own copy using [R](https://cran.r-project.org/) and the `shiny` package.
 
 The app can be downloaded and launched directly from GitHub:
 
