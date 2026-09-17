@@ -118,3 +118,7 @@ The final part of the presentation connects Bayes' theorem to Bayesian inference
 ---
 
 Made for students learning how probability can help us reason about the natural world. 🌿
+
+---
+
+The content of the slides was carefully crafted to be fit for purpose, but the layout/identity was outsourced to chatGPT-5.6 Sol. The shiny app was built from scratch using a carefully chosen prompt based on the slides to illustrate the calculation of probabilities and conditional probabilities. 
