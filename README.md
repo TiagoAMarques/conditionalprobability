@@ -10,9 +10,12 @@
 
 ## Open the teaching materials
 
-- [View the slides](https://tiagoamarques.github.io/conditionalprobability/)
-- [Open the live Shiny app](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6)
-- [View the Shiny app source](https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R)
+- <a href="https://tiagoamarques.github.io/conditionalprobability/" target="_blank" rel="noopener noreferrer">View the slides</a>
+
+- <a href="https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6" target="_blank" rel="noopener noreferrer">Open the live Shiny app</a>
+
+- <a href="https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R" target="_blank" rel="noopener noreferrer">View the Shiny app source</a>
+
 
 ## Contents
 
