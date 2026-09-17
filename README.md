@@ -2,6 +2,11 @@
 
 Teaching materials for conditional probability, the theorem of total probability, and Bayes' theorem using ecological examples.
 
+## Open the teaching materials
+
+- [View the slides](https://tiagoamarques.github.io/conditionalprobability/)
+- [View the Shiny app](https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R) and run it locally using the instructions below
+
 ## Contents
 
 - `ecological_conditional_probability.qmd`: Quarto Reveal.js slide source
@@ -17,7 +22,14 @@ The examples use hypothetical data and cover disease across three wetland habita
 
 ## Run the Shiny app
 
-Install R and the `shiny` package, then run the project from its top-level folder:
+Install R and the `shiny` package. The app can be downloaded and launched directly from GitHub:
+
+```r
+install.packages("shiny")
+shiny::runGitHub("conditionalprobability", "TiagoAMarques")
+```
+
+Alternatively, clone or download this repository and run the project from its top-level folder:
 
 ```r
 install.packages("shiny")
