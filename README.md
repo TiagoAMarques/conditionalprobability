@@ -5,7 +5,8 @@ Teaching materials for conditional probability, the theorem of total probability
 ## Open the teaching materials
 
 - [View the slides](https://tiagoamarques.github.io/conditionalprobability/)
-- [View the Shiny app](https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R) and run it locally using the instructions below
+- [Open the live Shiny app](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6)
+- [View the Shiny app source](https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R)
 
 ## Contents
 
@@ -57,7 +58,7 @@ Quarto writes the presentation to `docs/index.html` so GitHub Pages can serve it
 
 The slides will then be available through GitHub Pages.
 
-GitHub Pages serves static files and cannot execute Shiny. Students can run the app locally from this repository. To provide a browser-based app, deploy `app.R`, `R/`, and `www/` to shinyapps.io or Posit Connect, then add the deployed URL to this README.
+GitHub Pages serves the static slides. The interactive app is deployed separately on [Posit Connect Cloud](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6), and students can also run it locally from this repository.
 
 ## Check the calculations
 
