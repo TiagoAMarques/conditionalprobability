@@ -20,14 +20,14 @@
 ## Contents
 
 <p align="center">
-  <a href="https://tiagoamarques.github.io/conditionalprobability/"><strong>Open the presentation →</strong></a>
+  <a href="https://tiagoamarques.github.io/conditionalprobability/" target="_blank" rel="noopener noreferrer"><strong>Open the presentation →</strong></a>
 </p>
 
 ## Welcome! 👋
 
 If you are a student, you are in the right place. You do **not** need to know Git or GitHub to use these materials—and you can ignore the technical-looking list of files above.
 
-Start with the **[interactive presentation](https://tiagoamarques.github.io/conditionalprobability/)**. It opens in your browser, with nothing to install. Use the arrow keys or the controls in the bottom-right corner to move through the slides.
+Start with the <strong><a href="https://tiagoamarques.github.io/conditionalprobability/" target="_blank" rel="noopener noreferrer">interactive presentation</a></strong>. It opens in your browser, with nothing to install. Use the arrow keys or the controls in the bottom-right corner to move through the slides.
 
 ## What will we explore?
 
@@ -46,9 +46,9 @@ All datasets in the examples are hypothetical and designed for learning.
 
 The interactive app lets you change probabilities and immediately see how the results respond:
 
-### **[Open the web-based Shiny app →](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6)**
+### <strong><a href="https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6" target="_blank" rel="noopener noreferrer">Open the web-based Shiny app →</a></strong>
 
-It runs directly in your browser, so there is nothing to install. The options below are only for anyone who would like to run their own copy using [R](https://cran.r-project.org/) and the `shiny` package.
+It runs directly in your browser, so there is nothing to install. The options below are only for anyone who would like to run their own copy using <a href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">R</a> and the `shiny` package.
 
 The app can be downloaded and launched directly from GitHub:
 
@@ -79,7 +79,7 @@ If you have not used R before, ask your instructor for help with this optional p
 
 ### Render the presentation
 
-Install [Quarto](https://quarto.org/) and run:
+Install <a href="https://quarto.org/" target="_blank" rel="noopener noreferrer">Quarto</a> and run:
 
 ```sh
 quarto render
@@ -96,7 +96,7 @@ The rendered presentation is written to `docs/index.html`.
 
 The slides will then be available through GitHub Pages.
 
-GitHub Pages serves the static slides. The interactive app is deployed separately on [Posit Connect Cloud](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6), and students can also run it locally from this repository.
+GitHub Pages serves the static slides. The interactive app is deployed separately on <a href="https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6" target="_blank" rel="noopener noreferrer">Posit Connect Cloud</a>, and students can also run it locally from this repository.
 
 With R installed, run:
 
@@ -116,7 +116,7 @@ GitHub Pages serves the static presentation from the `/docs` folder. It cannot r
 
 The final part of the presentation connects Bayes' theorem to Bayesian inference in ecology:
 
-> Ellison, A. M. (2004). Bayesian inference in ecology. *Ecology Letters*, 7, 509–520. <https://doi.org/10.1111/j.1461-0248.2004.00603.x>
+> Ellison, A. M. (2004). Bayesian inference in ecology. *Ecology Letters*, 7, 509–520. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>
 
 ---
 
