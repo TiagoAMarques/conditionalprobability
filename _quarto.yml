@@ -1,0 +1,8 @@
+project:
+  type: default
+  output-dir: docs
+  render:
+    - ecological_conditional_probability.qmd
+
+execute:
+  freeze: auto

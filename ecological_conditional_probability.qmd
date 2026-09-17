@@ -1,0 +1,326 @@
+---
+title: "Conditional probability in ecology"
+subtitle: "From habitat-specific risk to Bayesian updating"
+author: "Bioestatística"
+output-file: index.html
+format:
+  revealjs:
+    theme: [default, ecology.scss]
+    slide-number: true
+    progress: true
+    hash: true
+    center: false
+    transition: fade
+    background-transition: fade
+    width: 1600
+    height: 900
+    margin: 0.08
+    chalkboard: true
+    footer: "Probability through ecological examples"
+execute:
+  echo: false
+---
+
+## Probability: common interpretations
+
+::: {.definition-list}
+<div><span class="definition-name">Classical probability</span><span class="definition-text">When outcomes are equally likely, $P(A)$ is the number of outcomes in $A$ divided by the total number of possible outcomes.</span></div>
+<div><span class="definition-name">Frequentist probability</span><span class="definition-text">$P(A)$ is the long-run relative frequency of event $A$ under repeated, comparable observations.</span></div>
+<div><span class="definition-name">Subjective probability</span><span class="definition-text">$P(A)$ quantifies uncertainty about $A$ given current information and can change when new evidence arrives.</span></div>
+:::
+
+All three interpretations use the same probability rules:
+
+::: {.rule-line}
+$$0\leq P(A)\leq 1, \qquad P(\Omega)=1, \qquad P(A^c)=1-P(A)$$
+:::
+
+## Conditional probability: definition
+
+Conditional probability restricts attention to cases where $B$ has occurred.
+
+::: {.formula-large}
+$$P(A\mid B)=\frac{P(A\cap B)}{P(B)}, \qquad P(B)>0$$
+:::
+
+::: {.definition-parts}
+<div><strong>$A\cap B$</strong><br>Both events occur</div>
+<div><strong>$B$</strong><br>The conditioning set</div>
+<div><strong>$P(A\mid B)$</strong><br>Probability of $A$ within $B$</div>
+:::
+
+The event after the vertical bar determines the relevant denominator.
+
+## The theorem of total probability
+
+Let $B_1,\ldots,B_k$ form a partition of the sample space: the events do not overlap and together cover every possible outcome.
+
+::: {.formula-large}
+$$P(A)=\sum_{i=1}^{k}P(A\mid B_i)P(B_i)$$
+:::
+
+Each term combines:
+
+::: {.definition-parts .two-parts}
+<div><strong>$P(A\mid B_i)$</strong><br>Probability of $A$ within group $i$</div>
+<div><strong>$P(B_i)$</strong><br>Frequency or prior probability of group $i$</div>
+:::
+
+The theorem produces the overall probability as a weighted average of group-specific probabilities.
+
+## Bayes' theorem
+
+Bayes’ theorem reverses a conditional probability by combining evidence with prior information.
+
+::: {.formula-large}
+$$P(B_j\mid A)=\frac{P(A\mid B_j)P(B_j)}{\sum_{i=1}^{k}P(A\mid B_i)P(B_i)}$$
+:::
+
+::: {.definition-parts}
+<div><strong>$P(B_j)$</strong><br>Prior probability</div>
+<div><strong>$P(A\mid B_j)$</strong><br>Likelihood of the evidence</div>
+<div><strong>$P(B_j\mid A)$</strong><br>Updated probability</div>
+:::
+
+The denominator is $P(A)$, often obtained with the theorem of total probability.
+
+## Three questions, one wetland survey
+
+::: {.scenario-grid}
+::: {.scenario-main}
+Ecologists survey **100 ponds** for an amphibian disease.
+
+| Habitat | Surveyed | Diseased |
+|:--|--:|--:|
+| Forest ponds | 30 | 12 |
+| Marsh ponds | 40 | 8 |
+| Open ponds | 30 | 3 |
+| **Total** | **100** | **23** |
+:::
+
+::: {.scenario-questions}
+**Conditional probability**  
+How common is disease within forest ponds?
+
+**Total probability**  
+How common is disease across all ponds?
+
+**Bayes' theorem**  
+Given disease, how likely is a pond to be forested?
+:::
+:::
+
+<div class="source-note">Teaching example with hypothetical data</div>
+
+## Events and the habitat partition
+
+Let $D$ mean “disease detected.” The habitat events are:
+
+::: {.event-line}
+<div><strong>$F$</strong><br>forest pond</div>
+<div><strong>$M$</strong><br>marsh pond</div>
+<div><strong>$O$</strong><br>open pond</div>
+:::
+
+Every pond belongs to exactly one habitat, so $F$, $M$, and $O$ form a partition of the survey.
+
+::: {.partition-line}
+$$P(F)+P(M)+P(O)=0.30+0.40+0.30=1$$
+:::
+
+This partition lets us combine habitat-specific disease risks without double counting ponds.
+
+## Conditional probability
+
+Let $D$ mean “disease detected” and $F$ mean “forest pond.”
+
+::: {.formula-large}
+$$P(D\mid F)=\frac{P(D\cap F)}{P(F)}$$
+:::
+
+Among the **30 forest ponds**, **12** have disease:
+
+::: {.calculation}
+$$P(D\mid F)=\frac{12}{30}=0.40$$
+:::
+
+The conditioning event $F$ changes the denominator from all ponds to forest ponds.
+
+## The direction of conditioning matters
+
+::: {.two-column}
+::: {.prob-side .forest}
+<div class="subhead">Disease given forest</div>
+
+$$P(D\mid F)=\frac{12}{30}=0.40$$
+
+Select forest ponds first, then ask which have disease.
+:::
+
+::: {.prob-side .disease}
+<div class="subhead">Forest given disease</div>
+
+$$P(F\mid D)=\frac{12}{23}=0.52$$
+
+Select diseased ponds first, then ask which are forest ponds.
+:::
+:::
+
+::: {.key-message}
+$P(D\mid F)$ and $P(F\mid D)$ answer different ecological questions.
+:::
+
+## The theorem of total probability
+
+The ponds form three mutually exclusive habitat groups: forest $F$, marsh $M$, and open $O$.
+
+::: {.formula-large}
+$$P(D)=P(D\mid F)P(F)+P(D\mid M)P(M)+P(D\mid O)P(O)$$
+:::
+
+::: {.calculation}
+$$P(D)=(0.40)(0.30)+(0.20)(0.40)+(0.10)(0.30)=0.23$$
+:::
+
+::: {.habitat-strips}
+<div><strong>Forest contribution</strong><br>0.12 of all ponds</div>
+<div><strong>Marsh contribution</strong><br>0.08 of all ponds</div>
+<div><strong>Open contribution</strong><br>0.03 of all ponds</div>
+:::
+
+::: {.total-result}
+Overall disease prevalence: $0.12+0.08+0.03=0.23$
+:::
+
+## Bayes' theorem reverses the condition
+
+We know disease risk by habitat. Bayes' theorem recovers habitat composition among diseased ponds.
+
+::: {.formula-large}
+$$P(F\mid D)=\frac{P(D\mid F)P(F)}{P(D)}$$
+:::
+
+::: {.calculation}
+$$P(F\mid D)=\frac{(0.40)(0.30)}{0.23}=0.52$$
+:::
+
+Just over half of diseased ponds are forest ponds, even though forest ponds make up only 30% of the survey.
+
+## A monitoring test can produce a surprising posterior
+
+Let $S$ mean “the species occupies the surveyed site” and $+$ mean “the survey returns a positive result.” Suppose an elusive species occupies 5% of sites. A survey detects it at 80% of occupied sites and returns a false positive at 10% of unoccupied sites.
+
+::: {.bayes-grid}
+<div><span class="label">Prior occupancy</span><strong>$P(S)=0.05$</strong></div>
+<div><span class="label">Sensitivity</span><strong>$P(+\mid S)=0.80$</strong></div>
+<div><span class="label">False-positive rate</span><strong>$P(+\mid S^c)=0.10$</strong></div>
+:::
+
+::: {.calculation .compact}
+$$P(S\mid +)=\frac{(0.80)(0.05)}{(0.80)(0.05)+(0.10)(0.95)}=0.296$$
+:::
+
+A positive result raises occupancy probability from 5% to about 30%, but does not establish presence with certainty.
+
+## Practice: invasive plant survey
+
+Let $I$ mean “the invasive plant occurs” and $T$ mean “the quadrat lies beside a trail.” Twenty percent of quadrats lie beside a trail. The plant occurs in 50% of trail-side quadrats and 10% of other quadrats.
+
+::: {.practice}
+1. What is the probability that a randomly selected quadrat contains the plant?
+2. If a quadrat contains the plant, what is the probability that it lies beside a trail?
+:::
+
+::: {.fragment .answer}
+$$P(I)=P(I\mid T)P(T)+P(I\mid T^c)P(T^c)$$
+
+$$P(I)=(0.50)(0.20)+(0.10)(0.80)=0.18$$
+
+$$P(T\mid I)=\frac{P(I\mid T)P(T)}{P(I)}$$
+
+$$P(T\mid I)=\frac{(0.50)(0.20)}{0.18}=0.56$$
+:::
+
+## A compact workflow
+
+::: {.workflow}
+<div><strong>1. Define the events</strong><br>Translate the ecological question into symbols.</div>
+<div><strong>2. Identify the conditioning set</strong><br>The event after the bar determines the denominator.</div>
+<div><strong>3. Partition when needed</strong><br>Combine habitat-specific probabilities with their frequencies.</div>
+<div><strong>4. Update with Bayes</strong><br>Combine prior information with the observed evidence.</div>
+:::
+
+::: {.closing-formulas}
+$$P(A\mid B)=\frac{P(A\cap B)}{P(B)}$$
+$$P(A)=\sum_i P(A\mid B_i)P(B_i)$$
+$$P(B_j\mid A)=\frac{P(A\mid B_j)P(B_j)}{\sum_i P(A\mid B_i)P(B_i)}$$
+:::
+
+## From Bayes' theorem to Bayesian inference
+
+The same probability rule can update uncertainty about an ecological parameter or model.
+
+::: {.formula-large}
+$$p(\theta\mid y)=\frac{p(y\mid\theta)p(\theta)}{p(y)}$$
+:::
+
+::: {.bayes-inference-line}
+<div><strong>$p(\theta)$</strong><br>Prior information about an ecological quantity</div>
+<div><strong>$p(y\mid\theta)$</strong><br>Likelihood of the observed data</div>
+<div><strong>$p(\theta\mid y)$</strong><br>Posterior uncertainty after observing the data</div>
+:::
+
+The event $B$ becomes a parameter, hypothesis, or model; the event $A$ becomes the observed ecological data.
+
+## Ellison (2004): Bayesian inference in ecology
+
+Ellison described four central contrasts between Bayesian and frequentist inference.
+
+::: {.comparison-table}
+| Question | Frequentist framing | Bayesian framing |
+|:--|:--|:--|
+| Main probability | Data given a hypothesis | Hypothesis or parameter given data |
+| Meaning of probability | Long-run relative frequency | Degree of uncertainty given information |
+| Earlier knowledge | Not represented by a prior | Expressed through a prior distribution |
+| Model parameters | Fixed but unknown | Represented by probability distributions |
+:::
+
+Ellison also emphasized posterior probabilities, model uncertainty, and applications spanning population dynamics and ecosystem processes.
+
+<div class="source-note">Source: Ellison, A. M. (2004). <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">Bayesian inference in ecology</a>. <em>Ecology Letters</em>, 7, 509–520.</div>
+
+## Bayesian methods in ecological practice
+
+Many methods in the ecological literature are now commonly implemented in a Bayesian framework, especially when the ecological process cannot be observed directly.
+
+::: {.method-list}
+<div><strong>Occupancy and abundance models</strong><br>Separate occurrence or abundance from imperfect detection.</div>
+<div><strong>State-space population models</strong><br>Separate biological dynamics from observation error.</div>
+<div><strong>Integrated population models</strong><br>Combine counts, demographic data, and other evidence.</div>
+<div><strong>Spatial and hierarchical models</strong><br>Represent dependence across sites, years, species, or taxonomic groups.</div>
+:::
+
+Bayesian analysis is common for these problems, but some have frequentist alternatives. The ecological question and model structure should guide the choice.
+
+## Advantages of Bayesian methods
+
+::: {.advantage-list}
+<div><strong>Direct probability statements</strong><span>Credible intervals and posterior probabilities answer questions about parameters, predictions, and hypotheses directly.</span></div>
+<div><strong>Earlier evidence can be included</strong><span>Priors can represent previous studies, expert knowledge, or known biological constraints.</span></div>
+<div><strong>Hierarchical structure fits ecology</strong><span>Variation among sites, years, populations, and species can be modelled within one coherent analysis.</span></div>
+<div><strong>Uncertainty propagates through the model</strong><span>Uncertainty in latent states and parameters carries into predictions and derived quantities.</span></div>
+<div><strong>Prediction and decisions are natural outputs</strong><span>Posterior predictive distributions support forecasting, risk assessment, and management decisions.</span></div>
+:::
+
+## Advantages come with responsibilities
+
+::: {.responsibility-grid}
+<div><strong>Explain the prior</strong><br>State its biological meaning and show how strongly it influences the result.</div>
+<div><strong>Check computation</strong><br>Assess convergence, effective sample size, and numerical stability.</div>
+<div><strong>Check the model</strong><br>Use posterior predictive checks and examine mismatches with the data.</div>
+<div><strong>Test sensitivity</strong><br>Repeat the analysis with defensible alternative priors and assumptions.</div>
+:::
+
+Ellison’s central caution remains useful: the assumptions behind Bayesian and frequentist inference should be considered explicitly, not treated as a software choice.
+
+<div class="source-note">Source: Ellison (2004), <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">doi:10.1111/j.1461-0248.2004.00603.x</a></div>

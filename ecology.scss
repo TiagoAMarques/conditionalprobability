@@ -1,0 +1,318 @@
+/*-- scss:defaults --*/
+$body-bg: #f5f1e8;
+$body-color: #1f2f2b;
+$link-color: #2e6b57;
+$presentation-heading-color: #163e35;
+$presentation-font-size-root: 32px;
+$font-family-sans-serif: "Aptos", "Segoe UI", sans-serif;
+$presentation-heading-font: "Aptos Display", "Segoe UI", sans-serif;
+
+/*-- scss:rules --*/
+.reveal {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(198, 160, 86, 0.14), transparent 23%),
+    linear-gradient(135deg, rgba(46, 107, 87, 0.04), transparent 48%);
+}
+
+.reveal .slides { text-align: left; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+
+.reveal h1 { font-size: 2.25em; }
+.reveal h2 { font-size: 1.55em; margin-bottom: 0.65em; }
+.reveal h3 { font-size: 0.95em; }
+
+.reveal .title-slide h1 {
+  max-width: 980px;
+  margin-top: 1.2em;
+  color: #163e35;
+}
+
+.reveal .title-slide .subtitle {
+  color: #8a552f;
+  font-size: 1.05em;
+}
+
+.reveal .slide-number,
+.reveal .footer {
+  color: #60736c;
+  font-size: 0.42em;
+}
+
+.scenario-grid,
+.two-column {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 2.2em;
+  align-items: start;
+}
+
+.scenario-main table {
+  margin: 0.45em 0 0;
+  font-size: 0.82em;
+}
+
+.scenario-main th { color: #163e35; }
+
+.scenario-questions {
+  border-left: 5px solid #c08a48;
+  padding-left: 1.15em;
+  font-size: 0.8em;
+}
+
+.scenario-questions strong { color: #8a552f; }
+
+.source-note {
+  margin-top: 1.2em;
+  color: #6b7772;
+  font-size: 0.48em;
+}
+
+.definition-list {
+  display: grid;
+  gap: 0.85em;
+  margin: 0.5em 0 1em;
+}
+
+.definition-list > div {
+  display: grid;
+  grid-template-columns: 0.38fr 1fr;
+  gap: 1.25em;
+  padding-bottom: 0.55em;
+  border-bottom: 2px solid #d1cabd;
+}
+
+.definition-name {
+  color: #2e6b57;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.definition-text { font-size: 0.72em; }
+
+.rule-line {
+  color: #8a552f;
+  font-size: 0.88em;
+}
+
+.definition-parts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6em;
+  margin: 1.2em 0;
+}
+
+.definition-parts.two-parts { grid-template-columns: repeat(2, 1fr); }
+
+.definition-parts div {
+  border-top: 6px solid #2e6b57;
+  padding-top: 0.5em;
+  font-size: 0.72em;
+}
+
+.definition-parts div:nth-child(2) { border-color: #c08a48; }
+.definition-parts div:nth-child(3) { border-color: #b7613e; }
+
+.formula-large {
+  color: #163e35;
+  font-size: 1.18em;
+  margin: 0.8em 0;
+}
+
+.calculation {
+  color: #8a552f;
+  font-size: 1.16em;
+  margin: 0.7em 0;
+}
+
+.calculation.compact { font-size: 0.94em; }
+
+.prob-side {
+  padding: 0.3em 1.2em 0.8em;
+  min-height: 355px;
+}
+
+.prob-side.forest { border-top: 8px solid #2e6b57; }
+.prob-side.disease { border-top: 8px solid #b7613e; }
+
+.prob-side p { font-size: 0.78em; }
+
+.subhead {
+  color: #163e35;
+  font-size: 0.95em;
+  font-weight: 700;
+  margin: 0.7em 0 1.1em;
+}
+
+.key-message {
+  margin-top: 1.1em;
+  padding-top: 0.55em;
+  border-top: 2px solid #c8c2b4;
+  text-align: center;
+  color: #163e35;
+  font-weight: 650;
+}
+
+.habitat-strips,
+.bayes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2em;
+  margin-top: 1.25em;
+}
+
+.habitat-strips div {
+  border-top: 6px solid #2e6b57;
+  padding-top: 0.55em;
+  font-size: 0.72em;
+}
+
+.habitat-strips div:nth-child(2) { border-color: #c08a48; }
+.habitat-strips div:nth-child(3) { border-color: #b7613e; }
+
+.total-result {
+  margin-top: 1em;
+  color: #163e35;
+  text-align: center;
+  font-weight: 700;
+}
+
+.event-line {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin: 1.1em 0 1.4em;
+}
+
+.event-line div {
+  border-top: 7px solid #2e6b57;
+  padding-top: 0.5em;
+}
+
+.event-line div:nth-child(2) { border-color: #c08a48; }
+.event-line div:nth-child(3) { border-color: #b7613e; }
+
+.partition-line {
+  color: #8a552f;
+  font-size: 1.04em;
+  margin: 0.8em 0;
+}
+
+.bayes-grid div {
+  padding: 0.55em 0;
+  border-bottom: 3px solid #c8c2b4;
+}
+
+.bayes-grid .label {
+  display: block;
+  color: #60736c;
+  font-size: 0.58em;
+  margin-bottom: 0.25em;
+}
+
+.bayes-grid strong { font-size: 1.02em; color: #163e35; }
+
+.practice {
+  margin-top: 1em;
+  padding: 0.7em 1em;
+  border-left: 7px solid #2e6b57;
+  background: rgba(255,255,255,0.38);
+  font-size: 0.9em;
+}
+
+.answer {
+  margin-top: 0.75em;
+  color: #8a552f;
+  font-size: 0.82em;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1em 2.4em;
+}
+
+.workflow div {
+  padding: 0.3em 0 0.7em;
+  border-bottom: 3px solid #c8c2b4;
+  font-size: 0.75em;
+}
+
+.workflow strong { color: #2e6b57; }
+
+.closing-formulas {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1.45fr;
+  gap: 0.8em;
+  margin-top: 1.1em;
+  color: #163e35;
+  font-size: 0.62em;
+  align-items: center;
+}
+
+.bayes-inference-line {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6em;
+  margin: 1.25em 0;
+}
+
+.bayes-inference-line div {
+  border-top: 6px solid #2e6b57;
+  padding-top: 0.55em;
+  font-size: 0.69em;
+}
+
+.bayes-inference-line div:nth-child(2) { border-color: #c08a48; }
+.bayes-inference-line div:nth-child(3) { border-color: #b7613e; }
+
+.method-list,
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em 2em;
+  margin: 0.8em 0 1em;
+}
+
+.method-list div,
+.responsibility-grid div {
+  border-bottom: 3px solid #c8c2b4;
+  padding: 0.15em 0 0.55em;
+  font-size: 0.68em;
+}
+
+.method-list strong,
+.responsibility-grid strong { color: #2e6b57; }
+
+.advantage-list {
+  display: grid;
+  gap: 0.62em;
+}
+
+.advantage-list > div {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 1.2em;
+  padding-bottom: 0.46em;
+  border-bottom: 2px solid #d1cabd;
+}
+
+.advantage-list strong {
+  color: #2e6b57;
+  font-size: 0.68em;
+}
+
+.advantage-list span { font-size: 0.66em; }
+
+.comparison-table table { font-size: 0.65em; }
+
+@media (max-width: 900px) {
+  .scenario-grid,
+  .two-column,
+  .workflow { grid-template-columns: 1fr; }
+}
