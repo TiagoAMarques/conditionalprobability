@@ -1,0 +1,15 @@
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+R-library/
+*.Rproj
+.quarto/
+ecological_conditional_probability.html
+ecological_conditional_probability_files/
+/index.html
+
+/.quarto/
+**/*.quarto_ipynb
