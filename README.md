@@ -8,6 +8,14 @@
   <strong>A visual, ecology-based introduction to conditional probability, total probability, and Bayes' theorem.</strong>
 </p>
 
+## Open the teaching materials
+
+- [View the slides](https://tiagoamarques.github.io/conditionalprobability/)
+- [Open the live Shiny app](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6)
+- [View the Shiny app source](https://github.com/TiagoAMarques/conditionalprobability/blob/main/app.R)
+
+## Contents
+
 <p align="center">
   <a href="https://tiagoamarques.github.io/conditionalprobability/"><strong>Open the presentation →</strong></a>
 </p>
@@ -34,6 +42,14 @@ All datasets in the examples are hypothetical and designed for learning.
 ## Want to experiment with the numbers?
 
 The included interactive app lets you change probabilities and immediately see how the results respond. Running it requires [R](https://cran.r-project.org/) and the `shiny` package:
+
+The app can be downloaded and launched directly from GitHub:
+
+```r
+shiny::runGitHub("conditionalprobability", "TiagoAMarques")
+```
+
+Alternatively, clone or download this repository and run the project from its top-level folder:
 
 ```r
 install.packages("shiny")  # only needed the first time
@@ -65,6 +81,15 @@ quarto render
 The rendered presentation is written to `docs/index.html`.
 
 ### Check the calculations
+
+1. Create an empty GitHub repository.
+2. Commit and push the complete contents of this folder.
+3. In the repository settings, open **Pages**.
+4. Select **Deploy from a branch**, choose the main branch, and use `/docs` as the folder.
+
+The slides will then be available through GitHub Pages.
+
+GitHub Pages serves the static slides. The interactive app is deployed separately on [Posit Connect Cloud](https://connect.posit.cloud/tiago-a-marques/content/01a0ae77-2bb1-467f-3315-dcafe645cab6), and students can also run it locally from this repository.
 
 With R installed, run:
 
