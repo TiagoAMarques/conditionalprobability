@@ -24,9 +24,9 @@ execute:
 ## Probability: common interpretations
 
 ::: {.definition-list}
-<div><span class="definition-name">Classical probability</span><span class="definition-text">When outcomes are equally likely, $P(A)$ is the number of outcomes in $A$ divided by the total number of possible outcomes.</span></div>
-<div><span class="definition-name">Frequentist probability</span><span class="definition-text">$P(A)$ is the long-run relative frequency of event $A$ under repeated, comparable observations.</span></div>
-<div><span class="definition-name">Subjective probability</span><span class="definition-text">$P(A)$ quantifies uncertainty about $A$ given current information and can change when new evidence arrives.</span></div>
+<div><span class="definition-name">Classical probability</span><span class="definition-text">When outcomes are equally likely, <em>P</em>(<em>A</em>) is the number of outcomes in <em>A</em> divided by the total number of possible outcomes.</span></div>
+<div><span class="definition-name">Frequentist probability</span><span class="definition-text"><em>P</em>(<em>A</em>) is the long-run relative frequency of event <em>A</em> under repeated, comparable observations.</span></div>
+<div><span class="definition-name">Subjective probability</span><span class="definition-text"><em>P</em>(<em>A</em>) quantifies uncertainty about <em>A</em> given current information and can change when new evidence arrives.</span></div>
 :::
 
 All three interpretations use the same probability rules:
