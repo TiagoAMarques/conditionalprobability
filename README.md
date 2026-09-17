@@ -1,32 +1,60 @@
 # Conditional probability in ecology
 
-Teaching materials for conditional probability, the theorem of total probability, and Bayes' theorem using ecological examples.
+<p align="center">
+  <img src="assets/conditional-probability-wetland.png" alt="An illustrated wetland with a frog, a wading bird, overlapping probability circles, and a branching probability path" width="100%">
+</p>
 
-## Contents
+<p align="center">
+  <strong>A visual, ecology-based introduction to conditional probability, total probability, and Bayes' theorem.</strong>
+</p>
 
-- `ecological_conditional_probability.qmd`: Quarto Reveal.js slide source
-- `ecology.scss`: slide theme
-- `docs/index.html`: rendered slides for GitHub Pages
-- `app.R`: interactive Shiny application
-- `R/probability_helpers.R`: probability calculations used by the app
-- `tests/test_helpers.R`: dependency-free numerical checks
+<p align="center">
+  <a href="https://tiagoamarques.github.io/conditionalprobability/"><strong>Open the presentation →</strong></a>
+</p>
 
-The examples use hypothetical data and cover disease across three wetland habitats, occupancy after a species survey, and invasive-plant occurrence near trails. The final slides discuss Bayesian inference in ecology and refer to:
+## Welcome! 👋
 
-> Ellison, A. M. (2004). Bayesian inference in ecology. *Ecology Letters*, 7, 509–520. <https://doi.org/10.1111/j.1461-0248.2004.00603.x>
+If you are a student, you are in the right place. You do **not** need to know Git or GitHub to use these materials—and you can ignore the technical-looking list of files above.
 
-## Run the Shiny app
+Start with the **[interactive presentation](https://tiagoamarques.github.io/conditionalprobability/)**. It opens in your browser, with nothing to install. Use the arrow keys or the controls in the bottom-right corner to move through the slides.
 
-Install R and the `shiny` package, then run the project from its top-level folder:
+## What will we explore?
+
+The material uses ecological stories to make the probability ideas concrete:
+
+| Question | Probability idea |
+| --- | --- |
+| How does disease risk differ among wetland habitats? | Conditional probability |
+| What is the overall disease risk across the whole wetland? | The theorem of total probability |
+| After a positive survey, how likely is a species to be present? | Bayes' theorem |
+| Does being near a trail change the chance of finding an invasive plant? | Combining the ideas |
+
+All datasets in the examples are hypothetical and designed for learning.
+
+## Want to experiment with the numbers?
+
+The included interactive app lets you change probabilities and immediately see how the results respond. Running it requires [R](https://cran.r-project.org/) and the `shiny` package:
 
 ```r
-install.packages("shiny")
+install.packages("shiny")  # only needed the first time
 shiny::runApp()
 ```
 
-The app recalculates every downstream probability when an input changes.
+If you have not used R before, ask your instructor for help with this optional part. You can follow the complete presentation without running the app.
 
-## Render the slides
+<details>
+<summary><strong>Information for instructors and contributors</strong></summary>
+
+### What's in this repository?
+
+- `ecological_conditional_probability.qmd` — source for the Quarto/Reveal.js presentation
+- `ecology.scss` — presentation theme
+- `docs/index.html` — rendered presentation served by GitHub Pages
+- `app.R` — interactive Shiny application
+- `R/probability_helpers.R` — probability calculations used by the app
+- `tests/test_helpers.R` — dependency-free numerical checks
+
+### Render the presentation
 
 Install [Quarto](https://quarto.org/) and run:
 
@@ -34,33 +62,30 @@ Install [Quarto](https://quarto.org/) and run:
 quarto render
 ```
 
-Quarto writes the presentation to `docs/index.html` so GitHub Pages can serve it.
+The rendered presentation is written to `docs/index.html`.
 
-## Publish on GitHub
+### Check the calculations
 
-1. Create an empty GitHub repository.
-2. Commit and push the complete contents of this folder.
-3. In the repository settings, open **Pages**.
-4. Select **Deploy from a branch**, choose the main branch, and use `/docs` as the folder.
-
-The slides will then be available through GitHub Pages.
-
-GitHub Pages serves static files and cannot execute Shiny. Students can run the app locally from this repository. To provide a browser-based app, deploy `app.R`, `R/`, and `www/` to shinyapps.io or Posit Connect, then add the deployed URL to this README.
-
-## Check the calculations
-
-Run:
+With R installed, run:
 
 ```r
 source("tests/test_helpers.R")
 ```
 
-The tests reproduce the default values used in the slides.
+The checks reproduce the default values used in the slides.
 
-## Requirements
+### Publishing notes
 
-- R
-- R package: `shiny`
-- Quarto, only when rebuilding the slides
+GitHub Pages serves the static presentation from the `/docs` folder. It cannot run the Shiny app. To offer the app in a browser, deploy `app.R`, `R/`, and `www/` to a Shiny hosting service, then add its URL above.
 
-No licence is included. Add one before publication if you want to state how others may reuse or modify the materials.
+</details>
+
+## Further reading
+
+The final part of the presentation connects Bayes' theorem to Bayesian inference in ecology:
+
+> Ellison, A. M. (2004). Bayesian inference in ecology. *Ecology Letters*, 7, 509–520. <https://doi.org/10.1111/j.1461-0248.2004.00603.x>
+
+---
+
+Made for students learning how probability can help us reason about the natural world. 🌿
